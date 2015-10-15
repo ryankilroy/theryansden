@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="css/default.css">
+		<meta charset="utf-8">
+		<meta name="description" content="Ryan's tester page for all things in his new life as a web dev">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<title>
+			The Ryan's Den
+		</title>
+		<script src="http://use.edgefonts.net/wire-one:n4:all.js"></script>
+	</head>
+	<body>
+        <script src=js/time.js></script>
+        <script>
+            window.onload = updateTime;
+            window.setInterval(updateTime, 1000);
+        </script>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-1 col-xs-offset-2">
+                    <h1 id="hrLabel">
+                        0
+                    </h1>
+                </div>
+                <div class="col-xs-1">
+                    <h1>
+                        :
+                    </h1>
+                </div>
+                <div class="col-xs-2">
+                    <h1 id="minLabel">
+                        00
+                    </h1>
+                </div>
+                <div class="col-xs-1">
+                    <h1>
+                        :
+                    </h1>
+                </div>
+                <div class="col-xs-2">
+                    <h1 id="secLabel">
+                        00
+                    </h1>
+                </div>
+                <div class="col-xs-1">
+                    <h1 id="suffixLabel">
+                        pm
+                    </h1>
+                </div>
+            </div>
+		</div>
+	</body>
+</html>

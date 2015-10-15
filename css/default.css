@@ -1,0 +1,17 @@
+body
+{
+    background-image: url(Assets/wolf.png);
+    background-size:cover;
+    background-color:#DDDDDD;
+    color: #666666;
+    font-family: "arial";
+}
+h1 {
+    font-family: wire-one;
+    font-size: 60px;
+    text-shadow: 3px 3px #FFFFFF;
+}
+
+
+
+
