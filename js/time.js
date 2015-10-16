@@ -11,10 +11,11 @@ function updateTime() {
     suffix = hours >= 12 ? 'pm' : 'am';
     
     //No one should be looking at this site this early in the morning...
-    if (hours < 6 && hours > 2) {
-        hours = 'why are';
-        minutes = 'you still';
-        seconds = 'awake !?';
+    if (hours < 6 && hours > 1) {
+        hours = 'Y';
+        minutes = 'R';
+        seconds = 'U';
+        suffix = 'UP?';
     }
     
     hours = suffix === 'pm' ? hours - 12 : hours;
