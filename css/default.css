@@ -6,18 +6,19 @@ html
     background-size: cover;
 }
 
-body
-{
+body {
     height: 100%;
     background: transparent;
-    color: #666666;
-    font-family: "arial";
+    color: #333333;
+    font-family: wire-one;
+    font-weight: bold;
 }
 h1 {
     font-family: tulpen-one;
     font-weight: lighter;
     font-size: 60px;
     text-shadow: 2px 2px #FFFFFF;
+    height: 100%;
     
 }
 .bg {
@@ -46,4 +47,32 @@ h1 {
 .no-pad {
     padding: 0px;
     text-align: center;
+}
+
+a {
+    color: #333333;
+    font-size: 30px;
+    text-shadow: 1px 1px #FFFFFF;
+}
+
+#message {
+    bottom: 5%;
+    width: 100%;
+    position: absolute;
+}
+
+p {
+    font-family: economica;
+    font-size: 24px;
+    text-align: left;
+    text-shadow: 1px 1px black;
+    padding-left: 10px;
+    color: rgba(255,255,255,0.8);
+}
+
+#contact {
+    
+    top: 2%;
+    width: 100%;
+    position: absolute;
 }
