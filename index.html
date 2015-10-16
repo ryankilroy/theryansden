@@ -9,47 +9,51 @@
 		<title>
 			The Ryan's Den
 		</title>
-		<script src="http://use.edgefonts.net/wire-one:n4:all.js"></script>
-	</head>
-	<body>
+        <script src="http://use.edgefonts.net/fredericka-the-great:n4:all;geo:i4,n4;economica:i4,n4;tulpen-one:i4,n4:all;dorsa:i4,n4;wire-one:n4:all;megrim:n4:all;sirin-stencil:n4:all.js"></script>
         <script src=js/time.js></script>
+        <script src=js/bg.js></script>
+	</head>
+    <div class="bg" id="bgdiv"></div>
+	<body>
         <script>
             window.onload = updateTime;
             window.setInterval(updateTime, 1000);
+            window.setInterval(randBg, 10000);
         </script>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-xs-1 col-xs-offset-2">
+        <div class="container-fluid" id="back">
+            <div class="row" id="time">
+                <div class="col-xs-2 col-xs-offset-2 no-pad">
                     <h1 id="hrLabel">
                         0
                     </h1>
                 </div>
-                <div class="col-xs-1">
+                <div class="col-xs-1 no-pad">
                     <h1>
                         :
                     </h1>
                 </div>
-                <div class="col-xs-2">
+                <div class="col-xs-2 no-pad">
                     <h1 id="minLabel">
                         00
                     </h1>
                 </div>
-                <div class="col-xs-1">
+                <div class="col-xs-1 no-pad">
                     <h1>
                         :
                     </h1>
                 </div>
-                <div class="col-xs-2">
+                <div class="col-xs-2 no-pad">
                     <h1 id="secLabel">
                         00
                     </h1>
                 </div>
-                <div class="col-xs-1">
+                <div class="col-xs-1 no-pad">
                     <h1 id="suffixLabel">
                         pm
                     </h1>
                 </div>
             </div>
 		</div>
+        
 	</body>
 </html>
