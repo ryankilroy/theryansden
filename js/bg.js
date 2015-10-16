@@ -2,19 +2,6 @@ var fileIndex, fileName, fileString, htmldiv, bgdiv, bgOpac, inc, intervalHandle
 
 var old = [-1, -1, -1];
 
-function transition() {
-    'use strict';
-    bgOpac += inc;
-    if (bgOpac > 1) {
-        htmldiv.style.backgroundImage = fileString;
-        bgOpac = 0;
-        bgdiv.style.opacity = bgOpac;
-        inc = 0;
-        clearInterval(intervalHandle);
-        return;
-    }
-    bgdiv.style.opacity = bgOpac;
-}
 
 function uniqueIndex() {
     'use strict';
@@ -31,15 +18,35 @@ function uniqueIndex() {
     old[0] = fileIndex;
 }
 
-function randBg() {
+function loadNextImage() {
     'use strict';
     uniqueIndex();
     fileName = 'bgimg_' + fileIndex;
     fileString = 'url(../Assets/' + fileName + '.png)';
+    bgdiv = document.getElementById('bgdiv');
+    bgdiv.style.backgroundImage = fileString;
+}
+
+function transition() {
+    'use strict';
+    bgOpac += inc;
+    if (bgOpac > 1) {
+        htmldiv.style.backgroundImage = fileString;
+        bgOpac = 0;
+        bgdiv.style.opacity = bgOpac;
+        inc = 0;
+        clearInterval(intervalHandle);
+        loadNextImage();
+        return;
+    }
+    bgdiv.style.opacity = bgOpac;
+}
+
+function randBg() {
+    'use strict';
     bgOpac = 0;
     inc = 0.01;
     htmldiv = document.getElementsByTagName('html')[0];
     bgdiv = document.getElementById('bgdiv');
-    bgdiv.style.backgroundImage = fileString;
     intervalHandle = setInterval(transition, 10);
 }
