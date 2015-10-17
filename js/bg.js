@@ -23,6 +23,7 @@ function loadNextImage() {
     uniqueIndex();
     fileName = 'bgimg_' + fileIndex;
     fileString = 'url(../assets/' + fileName + '.png)';
+    fileString = 'url(../assets/logo.png)';
     bgdiv = document.getElementById('bgdiv');
     bgdiv.style.backgroundImage = fileString;
 }

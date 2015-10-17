@@ -10,16 +10,13 @@
 			The Ryan's Den
 		</title>
         <script src="http://use.edgefonts.net/fredericka-the-great:n4:all;geo:i4,n4;economica:i4,n4;tulpen-one:i4,n4:all;dorsa:i4,n4;wire-one:n4:all;megrim:n4:all;sirin-stencil:n4:all.js"></script>
-        <script src=js/time.js></script>
-        <script src=js/bg.js></script>
+        <script src=js/colourbg.js></script>
 	</head>
     <div class="bg" id="bgdiv"></div>
 	<body>
         <script>
-            window.onload = updateTime;
-            window.onload = loadNextImage;
-            window.setInterval(updateTime, 1000);
-            window.setInterval(randBg, 10000);
+            window.onload = randColorInc;
+            window.setInterval(newColor,10);
         </script>
         <div class="container-fluid" id="back">
             <div class="row" id="contact">
@@ -33,7 +30,7 @@
                     <a href="mailto:ryan.matt.collins@gmail.com">EMAIL</a>
                 </div>
             </div>
-            <div class="row" id="time">
+            <div class="row" id="time" hidden="true">
                 <div class="col-xs-2 col-xs-offset-2 no-pad">
                     <h1 id="hrLabel">
                         --
@@ -65,9 +62,9 @@
                     </h1>
                 </div>
             </div>
-            <div class="row" id="message">
+            <div class="row" id="message" hidden="true">
                 <div class="col-xs-10 col-xs-offset-1 no-pad" id="messageBox">
-                    <p>
+                    <p id="bloop">
                         Hello, 
                         <br>&emsp;
                         As much as I'd like to welcome
