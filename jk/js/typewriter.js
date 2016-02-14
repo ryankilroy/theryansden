@@ -1,17 +1,59 @@
 var intervalHandle, opacInt, messageDiv, yesDiv, noDiv, bgOpac;
 
-var morseString = ".... . .-.. .-.. --- / .- --. . -. - / .----. -.- .. -. --. ... .-.. .- -.-- . .-. .----. .-.-.- / .-- --- ..- .-.. -.. / -.-- --- ..- / .-.. .. -.- . / - --- / --. --- / --- ..- - / .- --. .- .. -. ..--.."
-var constMorse = morseString;
+var firstDateMorse = ".... . .-.. .-.. --- / .- --. . -. - / .----. -.- .. -. --. ... .-.. .- -.-- . .-. .----. .-.-.- / .-- --- ..- .-.. -.. / -.-- --- ..- / .-.. .. -.- . / - --- / --. --- / --- ..- - / .- --. .- .. -. ..--.."
+var valentinesMorse = ".-..-. .... . .-.. .-.. --- / .- --. . -. - / .----. .-. . --. .. -. .- .-.. -.. .----. .-.-.- / .-- .. .-.. .-.. / -.-- --- ..- / -... . / -- -.-- / ...- .- .-.. . -. - .. -. . ..--.. .-..-."
+var firstDateString = "Hello Agent 'Kingslayer'. Would you like to go out again?"
+var valentinesString = "Hello Agent 'Reginald'. Will you be my valentine?"
+
+var constMorse;
+var morseString;
+var messageString;
+var frankenString;
 var spaceString = "";
-var messageString = "Hello Agent 'Kingslayer'. Would you like to go out again?"
-var frankenString = morseString;
 var substringIndex = 0;
 var morseIndex = 0;
-var length = messageString.length;
-var mlength = constMorse.length;
+var length;
+var mlength;
 
-function initMessage() {
+function initFirstDateMessage(){
+    initMessage(0);
+}
+
+function initValentinesMessage(){
+    initMessage(1);
+}
+
+function initMessage(index) {
     'use strict'
+    switch (index){
+        case 0:
+            constMorse = firstDateMorse;
+            morseString = firstDateMorse;
+            frankenString = firstDateString;
+            messageString = firstDateString;
+            length = firstDateString.length;
+            mlength = firstDateMorse.length;
+            break;
+        case 1:
+            constMorse = valentinesMorse;
+            morseString = valentinesMorse;
+            frankenString = valentinesString;
+            messageString = valentinesString;
+            length = firstDateString.length;
+            mlength= firstDateMorse.length;
+            break;
+        default:
+            constMorse = firstDateMorse;
+            morseString = firstDateMorse;
+            frankenString = firstDateString;
+            messageString = firstDateString;
+            length = firstDateString.length;
+            mlength = firstDateMorse.length;
+            break;
+    }
+    length = messageString.length;
+    mlength = morseString.length;
+    
     messageDiv = document.getElementById("message");
     messageDiv.style.opacity = 0;
     yesDiv = document.getElementById("yes");
@@ -50,24 +92,6 @@ function showLinks() {
     yesDiv.style.opacity = bgOpac;
     noDiv.style.opacity = bgOpac;
 }
-
-//function oldnextLetter() {
-//    'use strict';
-//    if (substringIndex < length) {
-//        substringIndex += 1;
-//        var messagePart = messageString.substring(0,substringIndex);
-//        if (messagePart.slice(-1) == "."){
-//            pausecomp(500);
-//        }
-//        var morseLength = morseString.indexOf(" ") + 1;
-//        if (morseLength < 1){
-//            morseLength = 10;
-//        }
-//        morseString = morseString.substring(morseLength);
-//        frankenString = messagePart + morseString;
-//        messageDiv.innerHTML = frankenString;
-//    }
-//}
 
 function nextLetter() {
     'use strict';
