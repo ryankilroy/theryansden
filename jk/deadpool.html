@@ -10,13 +10,26 @@
 			RICK POOL'D
 		</title>
         <script src="http://use.edgefonts.net/fredericka-the-great:n4:all;geo:i4,n4;economica:i4,n4;tulpen-one:i4,n4:all;dorsa:i4,n4;wire-one:n4:all;megrim:n4:all;sirin-stencil:n4:all.js"></script>
-        <script src=js/typewriter.js></script>
+        <script>
+            window.onload = function(){
+                var video = document.getElementById('video');
+                var audio = document.getElementById('audio');
+                video.addEventListener('click',function(){
+                    video.play();
+                    audio.play();
+                },false);
+            }
+        </script>
 	</head>
     <div class="bg" id="bgdiv"></div>
 	<body>
         <div class="container-fluid">
-            <video autoplay="yes" loop="loop" src="assets/deadpool.mp4"></video>
-            <audio autoplay="yes" src="assets/yes.mp4"></audio>
+           <div class="row">
+               <div class="col-xs-12">
+                    <video id="video" autoplay loop="loop" src="assets/deadpool.mp4" style="width: 100%; height: auto;"></video>
+                    <audio id="audio" autoplay src="assets/yes.mp4" hidden="true"></audio>
+               </div>
+           </div>
 		</div>
         
 	</body>
