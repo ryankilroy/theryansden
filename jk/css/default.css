@@ -26,6 +26,11 @@ p {
     cursor: default;
 }
 
+.valentines{
+    background-color: #FFAAAF !important;
+    font-family: "comic sans ms" !important; 
+}
+
 #message{
     margin-top: 10px;
     padding-left: 10px;
